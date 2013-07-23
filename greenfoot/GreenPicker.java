@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class GreenPicker here.
@@ -14,6 +15,10 @@ public class GreenPicker extends Picker
      */
     public void act() 
     {
-        // Add your action code here.
+       World world = getWorld() ;
+       List<GumballMachine> gumballmachines = world.getObjects(GumballMachine.class);
+       
+       GreenGumball gg = new  GreenGumball() ;
+       world.addObject(gg, 369, 389) ;
     }    
 }
