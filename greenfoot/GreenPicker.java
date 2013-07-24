@@ -18,6 +18,11 @@ public class GreenPicker extends Picker
        World world = getWorld() ;
        List<GumballMachine> gumballmachines = world.getObjects(GumballMachine.class);
        
+       //Message is displayed
+       Message m = new Message() ;
+       m.setText( "I'll pick green!" ) ;
+       world.addObject(m, 550, 470) ;
+       
        GreenGumball gg = new  GreenGumball() ;
        world.addObject(gg, 369, 389) ;
     }    
