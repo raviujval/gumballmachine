@@ -33,13 +33,16 @@ public class GumballWorld extends World
         addObject( new FakeQuarter(), 66, 248 ) ;
 
         Inspector inspector = new Inspector();
-        addObject(inspector, 533, 291);
+        addObject(inspector, 500, 291);
         RandomPicker randompicker = new RandomPicker();
         addObject(randompicker, 643, 104);
         randompicker.setLocation(655, 94);
         GreenPicker greenpicker = new GreenPicker();
         addObject(greenpicker, 686, 454);
         greenpicker.setLocation(669, 456);
+        RedPicker redpicker = new RedPicker();
+        addObject(redpicker, 720, 291);
+        redpicker.setLocation(720, 291);
         Quarter quarter2 = new Quarter();
         addObject(quarter2, 157, 426);
         quarter2.setLocation(67, 354);
