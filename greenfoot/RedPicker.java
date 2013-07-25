@@ -17,4 +17,13 @@ public class RedPicker extends Picker
     {
        
     }    
+    
+    public void getGumball() {
+        World world = getWorld() ;
+        Message m = new Message() ;
+        m.setText( "I'll pick red!" ) ;
+        world.addObject(m, 550, 80) ;
+        RedGumball rg = new  RedGumball() ;
+        world.addObject(rg, 369, 389) ;
+    }
 }

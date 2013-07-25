@@ -15,15 +15,29 @@ public class GreenPicker extends Picker
      */
     public void act() 
     {
+       
+
+    }    
+    
+    public void getGumball() {
        World world = getWorld() ;
        List<GumballMachine> gumballmachines = world.getObjects(GumballMachine.class);
        
+       Boolean isAnyGreenGumballLeft = false ;
        //Message is displayed
-       Message m = new Message() ;
-       m.setText( "I'll pick green!" ) ;
-       world.addObject(m, 550, 470) ;
-       
-       GreenGumball gg = new  GreenGumball() ;
-       world.addObject(gg, 369, 389) ;
-    }    
+       if (isAnyGreenGumballLeft) {
+           Message m = new Message() ;
+           m.setText( "I'll pick green!" ) ;
+           world.addObject(m, 550, 470) ;
+           GreenGumball gg = new  GreenGumball() ;
+           world.addObject(gg, 369, 389) ;
+        } else {
+           Message m = new Message() ;
+           m.setText( "No green left!" ) ;
+           world.addObject(m, 550, 470) ; 
+           List<RedPicker> rps = world.getObjects(RedPicker.class) ;
+           RedPicker rp = rps.get(0);
+           rp.getGumball() ;
+        }
+    }
 }
