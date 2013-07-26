@@ -43,6 +43,9 @@ public class GumballWorld extends World
         RedPicker redpicker = new RedPicker();
         addObject(redpicker, 720, 291);
         redpicker.setLocation(720, 291);
+        BluePicker bluepicker = new BluePicker();
+        addObject(bluepicker, 510, 494);
+        bluepicker.setLocation(510, 494);
         Quarter quarter2 = new Quarter();
         addObject(quarter2, 157, 426);
         quarter2.setLocation(67, 354);
