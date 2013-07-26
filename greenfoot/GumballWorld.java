@@ -49,6 +49,8 @@ public class GumballWorld extends World
         Quarter quarter2 = new Quarter();
         addObject(quarter2, 157, 426);
         quarter2.setLocation(67, 354);
+        PrintSmiley printsmiley = new PrintSmiley();
+        addObject(printsmiley, 270,480);
 
     }
 }
