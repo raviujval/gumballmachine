@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GumballMachine extends Actor
 {
+    private static boolean printSmiley;
+    private static boolean honeyTopping;
 
     public GumballMachine()
     {
@@ -37,5 +39,25 @@ public class GumballMachine extends Actor
             World world = getWorld() ;
             world.removeObject( coin ) ;
         }
+    }    
+    
+    public static void setHoneyTopping(boolean b)
+    {
+        honeyTopping = b;
+    }    
+    
+    public static void setPrintSmiley(boolean b)
+    {
+        printSmiley = b;
+    }
+    
+    public static boolean getHoneyTopping()
+    {
+        return honeyTopping;
+    }
+    
+    public static boolean getPrintSmiley()
+    {
+        return printSmiley;
     }    
 }
