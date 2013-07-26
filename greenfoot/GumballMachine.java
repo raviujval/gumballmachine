@@ -51,12 +51,12 @@ public class GumballMachine extends Actor
         printSmiley = b;
     }
     
-    public static boolean getHoneyTopping()
+    public static boolean isHoneyTopping()
     {
         return honeyTopping;
     }
     
-    public static boolean getPrintSmiley()
+    public static boolean isPrintSmiley()
     {
         return printSmiley;
     }    
