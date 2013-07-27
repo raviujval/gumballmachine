@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=void\ getGumball()
 comment2.params=picker
 comment2.target=void\ setSuccessor(Picker)
-numComments=3
+comment3.params=m\ gumball
+comment3.target=void\ dispenseGumball(Message,\ Gumball)
+numComments=4
