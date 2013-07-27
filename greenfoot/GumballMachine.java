@@ -108,6 +108,15 @@ public class GumballMachine extends Actor
     public void turnCrank()
     {
         state.turnCrank();
+        
+        if(isPrintSmiley())
+        {
+            //invoke decorator pattern here
+        }
+        if(isHoneyTopping())
+        {
+           //invoke decorator pattern here     
+        }
     }
     
     public void calculateTotal(Coin coin)

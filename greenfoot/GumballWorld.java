@@ -48,8 +48,10 @@ public class GumballWorld extends World
         BluePicker bluepicker = new BluePicker();
         addObject(bluepicker, 510, 494);
         bluepicker.setLocation(510, 494);
-        PrintSmiley printsmiley = new PrintSmiley();
-        addObject(printsmiley, 270,480);
+        PrintSmiley printSmiley = new PrintSmiley();
+        addObject(printSmiley, 270,480);
+        HoneyTopping honeyTopping = new HoneyTopping();
+        addObject(honeyTopping, 350,480);
 
     }
 }
