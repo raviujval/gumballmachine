@@ -29,8 +29,10 @@ public class GumballWorld extends World
         GumballMachine gumballmachine = GumballMachine.getInstance(5,5,5);
         addObject(gumballmachine, 367, 237);
         addObject( new Penny(), 57, 71 ) ;
-        addObject( new Quarter(), 68, 156 ) ;
-        addObject( new FakeQuarter(), 66, 248 ) ;
+        addObject( new Nickel(), 61, 150 ) ;
+        addObject( new Dime(), 65, 225 ) ;
+        addObject( new Quarter(), 68, 320 ) ;
+        addObject( new FakeQuarter(), 66, 420 ) ;
 
         Inspector inspector = new Inspector();
         addObject(inspector, 500, 291);
@@ -46,9 +48,6 @@ public class GumballWorld extends World
         BluePicker bluepicker = new BluePicker();
         addObject(bluepicker, 510, 494);
         bluepicker.setLocation(510, 494);
-        Quarter quarter2 = new Quarter();
-        addObject(quarter2, 157, 426);
-        quarter2.setLocation(67, 354);
         PrintSmiley printsmiley = new PrintSmiley();
         addObject(printsmiley, 270,480);
 
