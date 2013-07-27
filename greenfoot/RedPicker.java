@@ -11,12 +11,10 @@ public class RedPicker extends Picker
     }    
     
     public void getGumball() {
-        World world = getWorld() ;
+       World world = getWorld() ;
        GumballMachine gumballmachine = GumballMachine.getInstance();
        
-       Boolean isAnyRedGumballLeft = false ;
-       //Message is displayed
-       if (isAnyRedGumballLeft) {
+       if (gumballmachine.getRedGumballCount()>0) {
             Message m = new Message() ;
             m.setText( "I'll pick red!" ) ;
             world.addObject(m, 720, 291) ;

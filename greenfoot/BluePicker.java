@@ -16,7 +16,7 @@ public class BluePicker extends Picker
        
        Boolean isAnyBlueGumballLeft = false ;
        //Message is displayed
-       if (isAnyBlueGumballLeft) {
+       if (gumballmachine.getBlueGumballCount()>0) {
             Message m = new Message() ;
             m.setText( "I'll pick blue!" ) ;
             world.addObject(m, 510, 494) ;

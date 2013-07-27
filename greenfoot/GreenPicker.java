@@ -15,9 +15,7 @@ public class GreenPicker extends Picker
        World world = getWorld() ;
        GumballMachine gumballmachine = GumballMachine.getInstance();
        
-       Boolean isAnyGreenGumballLeft = false ;
-       //Message is displayed
-       if (isAnyGreenGumballLeft) {
+       if (gumballmachine.getGreenGumballCount()>0) {
            Message m = new Message() ;
            m.setText( "I'll pick green!" ) ;
            world.addObject(m, 550, 470) ;
