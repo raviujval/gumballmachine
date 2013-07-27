@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class OutOfGumballState extends State
 {
-    /**
-     * Act - do whatever the OutOfGumballState wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    private GumballMachine gumballMachine;
+    
+    public OutOfGumballState(GumballMachine gumballMachine)
     {
-        // Add your action code here.
+        this.gumballMachine = gumballMachine;
+    }   
+    
+    @Override
+    public void insertCoin(Coin coin)
+    {
+        
+    }
+    
+    @Override
+    public void turnCrank()
+    {
+        
     }    
 }

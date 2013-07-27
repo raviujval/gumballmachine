@@ -8,12 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class WaitingFor50CentsState extends State
 {
-    /**
-     * Act - do whatever the WaitingFor50CentsState wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    private GumballMachine gumballMachine;
+    
+    public WaitingFor50CentsState(GumballMachine gumballMachine)
     {
-        // Add your action code here.
-    }    
+        this.gumballMachine = gumballMachine;
+    }   
+    
+    @Override
+    public void insertCoin(Coin coin)
+    {
+        if((this.gumballMachine.getTotal() > 0) && (this.gumballMachine.getTotal() < 50))
+        {
+            this.gumballMachine.calculateTotal(coin);
+            this.gumballMachine.displayTotal();
+        }
+        else
+        {
+            this.gumballMachine.setState(this.gumballMachine.getHasMoneyState());
+        }
+        
+    }
+    
+    @Override
+    public void turnCrank()
+    {
+        if(this.gumballMachine.getTotal() < 50)
+        {
+            Message m = new Message() ;
+            m.setText( "Please insert a total of 50 Cents before turning the Crank!" ) ;
+            World world = getWorld() ;
+            world.addObject(m, 270,420) ;
+        }    
+    }
 }

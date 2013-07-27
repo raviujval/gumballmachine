@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Dime extends Coin
 {
     
+    
     public Dime() 
     {
         GreenfootImage image = getImage() ;

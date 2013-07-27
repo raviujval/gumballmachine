@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class State extends Actor
 {
     
-    public void insertCoin() 
+    public void insertCoin(Coin coin) 
     {
         // Add your action code here.
     }  

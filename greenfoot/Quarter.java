@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Quarter extends Coin
 {
-
+    
+    
     public Quarter()
     {
         GreenfootImage image = getImage() ;

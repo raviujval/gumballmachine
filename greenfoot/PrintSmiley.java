@@ -27,7 +27,7 @@ public class PrintSmiley extends Actor
             mouseX=mouse.getX();  
             mouseY=mouse.getY(); 
         
-        if (GumballMachine.isPrintSmiley()) {
+        if (GumballMachine.getInstance().isPrintSmiley()) {
                 
             Message m = new Message() ;
             m.setText( "Smiley Gumball !!" ) ;
