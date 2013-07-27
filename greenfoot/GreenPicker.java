@@ -1,18 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Write a description of class GreenPicker here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class GreenPicker extends Picker
 {
-    /**
-     * Act - do whatever the GreenPicker wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private Picker successor = null;
+    
     public void act() 
     {
        
@@ -21,7 +13,7 @@ public class GreenPicker extends Picker
     
     public void getGumball() {
        World world = getWorld() ;
-       List<GumballMachine> gumballmachines = world.getObjects(GumballMachine.class);
+       GumballMachine gumballmachine = GumballMachine.getInstance();
        
        Boolean isAnyGreenGumballLeft = false ;
        //Message is displayed
@@ -35,9 +27,13 @@ public class GreenPicker extends Picker
            Message m = new Message() ;
            m.setText( "No green left!" ) ;
            world.addObject(m, 550, 470) ; 
-           List<RedPicker> rps = world.getObjects(RedPicker.class) ;
-           RedPicker rp = rps.get(0);
-           rp.getGumball() ;
+           if (successor != null) {
+               successor.getGumball() ;
+            }
         }
+    }
+    
+    public void setSuccessor (Picker picker) {
+        successor = picker;
     }
 }

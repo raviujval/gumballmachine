@@ -1,19 +1,37 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class RandomPicker here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class RandomPicker extends Picker
 {
-    /**
-     * Act - do whatever the RandomPicker wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private Picker successor = null;
+    
     public void act() 
     {
         // Add your action code here.
     }    
+    
+    public void getGumball() {
+       World world = getWorld() ;
+       GumballMachine gumballmachine = GumballMachine.getInstance();
+       
+       Boolean isAnyGumballLeft = false ;
+       //Message is displayed
+       if (isAnyGumballLeft) {
+           Message m = new Message() ;
+           m.setText( "I'll pick green!" ) ;
+           world.addObject(m, 500, 291) ;
+           GreenGumball gg = new  GreenGumball() ;
+           world.addObject(gg, 369, 389) ;
+        } else {
+           Message m = new Message() ;
+           m.setText( "No green left!" ) ;
+           world.addObject(m, 500, 291) ; 
+           if (successor != null) {
+               successor.getGumball() ;
+            }
+        }
+    }
+    
+    public void setSuccessor (Picker picker) {
+        successor = picker;
+    }
 }
