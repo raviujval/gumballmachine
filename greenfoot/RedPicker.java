@@ -17,13 +17,13 @@ public class RedPicker extends Picker
        if (gumballmachine.getRedGumballCount()>0) {
             Message m = new Message() ;
             m.setText( "I'll pick red!" ) ;
-            world.addObject(m, 720, 291) ;
+            world.addObject(m, 640, 280) ;
             RedGumball rg = new  RedGumball() ;
             world.addObject(rg, 369, 389) ;
         } else {
            Message m = new Message() ;
            m.setText( "No red left!" ) ;
-           world.addObject(m, 720, 291) ; 
+           world.addObject(m, 640, 280) ; 
            if (successor != null) {
                successor.getGumball() ;
             }

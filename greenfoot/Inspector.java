@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Write a description of class Inspector here.
@@ -31,5 +32,22 @@ public class Inspector extends Alien
         }
         
     }
+    
+    /*
+    public void act(){
+        World world = getWorld() ;
+        
+        List<GreenPicker> gps = world.getObjects(GreenPicker.class) ;
+        GreenPicker gp = gps.get(0) ;
+        List<RedPicker> rps = world.getObjects(RedPicker.class) ;
+        RedPicker rp = rps.get(0) ;
+        List<BluePicker> bps = world.getObjects(BluePicker.class) ;
+        BluePicker bp = bps.get(0) ;
+        
+        gp.getGumball() ;
+        gp.setSuccessor(rp) ;
+        rp.setSuccessor(bp) ;
+    }
+    */
     
 }

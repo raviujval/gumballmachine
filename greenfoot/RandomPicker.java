@@ -39,7 +39,7 @@ public class RandomPicker extends Picker
     
     public void dispenseGumball(Message m, Gumball gumball) {
          World world = getWorld() ;
-         world.addObject(m, 500, 291) ;
+         world.addObject(m, 580, 100) ;
          world.addObject(gumball, 369, 389) ;
     }
 }

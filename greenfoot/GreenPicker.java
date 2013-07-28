@@ -18,13 +18,13 @@ public class GreenPicker extends Picker
        if (gumballmachine.getGreenGumballCount()>0) {
            Message m = new Message() ;
            m.setText( "I'll pick green!" ) ;
-           world.addObject(m, 550, 470) ;
+           world.addObject(m, 580, 440) ;
            GreenGumball gg = new  GreenGumball() ;
            world.addObject(gg, 369, 389) ;
         } else {
            Message m = new Message() ;
            m.setText( "No green left!" ) ;
-           world.addObject(m, 550, 470) ; 
+           world.addObject(m, 580, 440) ; 
            if (successor != null) {
                successor.getGumball() ;
             }
