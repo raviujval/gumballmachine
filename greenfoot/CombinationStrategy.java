@@ -37,14 +37,126 @@ public class CombinationStrategy extends GumballPickerStrategy
         if(quarterCount > 0)
             quarterInserted = true;    
             
-        if(pennyInserted && nickelInserted)
+        if(pennyInserted && nickelInserted && dimeInserted && quarterInserted)
         {
-            //put your strategy here
+            //strategy implemented here
+            pickers.add(new RandomPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RedPicker());
+            pickers.add(new GreenPicker());
+        }
+        else if(pennyInserted && nickelInserted && dimeInserted)
+        {
+            //strategy implemented here
             pickers.add(new BluePicker());
             pickers.add(new RedPicker());
             pickers.add(new GreenPicker());
             pickers.add(new RandomPicker());
-
+        }
+        else if(pennyInserted && nickelInserted && quarterInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RedPicker());
+            pickers.add(new GreenPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(pennyInserted && dimeInserted && quarterInserted)
+        {   
+            //strategy implemented here
+            pickers.add(new GreenPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RedPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(nickelInserted && dimeInserted && quarterInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RandomPicker());
+            pickers.add(new RedPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new GreenPicker());
+        }
+        else if(pennyInserted && nickelInserted)
+        {
+           //strategy implemented here
+            pickers.add(new BluePicker());
+            pickers.add(new GreenPicker());            
+            pickers.add(new RedPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(pennyInserted && dimeInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RedPicker());
+            pickers.add(new BluePicker());        
+            pickers.add(new GreenPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(pennyInserted && quarterInserted)
+        {   
+            //strategy implemented here
+            pickers.add(new GreenPicker());
+            pickers.add(new RedPicker());        
+            pickers.add(new BluePicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(nickelInserted && dimeInserted)
+        {
+            //strategy implemented here
+            pickers.add(new BluePicker());
+            pickers.add(new RedPicker());
+            pickers.add(new GreenPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(nickelInserted && quarterInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RedPicker());
+            pickers.add(new GreenPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(dimeInserted && quarterInserted)
+        {
+           //strategy implemented here
+            
+            pickers.add(new GreenPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RedPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(quarterInserted)
+        {
+           //strategy implemented here
+            pickers.add(new BluePicker());
+            pickers.add(new GreenPicker());        
+            pickers.add(new RedPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(nickelInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RedPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new GreenPicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(dimeInserted)
+        {
+           //strategy implemented here
+            pickers.add(new GreenPicker());
+            pickers.add(new RedPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RandomPicker());
+        }
+        else if(pennyInserted)
+        {
+            //strategy implemented here
+            pickers.add(new RandomPicker());
+            pickers.add(new GreenPicker());
+            pickers.add(new BluePicker());
+            pickers.add(new RedPicker());
         }
         
         return pickers;
