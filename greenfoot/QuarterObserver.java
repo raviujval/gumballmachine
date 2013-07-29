@@ -11,6 +11,7 @@ public class QuarterObserver extends CoinObserver
     public QuarterObserver(GumballMachine gumballMachine)
     {
         super(gumballMachine);
+        gumballMachine.attach(this);
     }
     
     public void update(Coin coin)

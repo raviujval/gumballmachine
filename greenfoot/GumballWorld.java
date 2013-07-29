@@ -36,6 +36,12 @@ public class GumballWorld extends World
 
         Inspector inspector = new Inspector(gumballMachine);
         addObject(inspector, 500, 291);
+        //Registering Observers
+        QuarterObserver quarterObserver = new QuarterObserver(gumballMachine);
+        PennyObserver pennyObserver = new PennyObserver(gumballMachine);
+        NickelObserver nickelObserver = new NickelObserver(gumballMachine);
+        DimeObserver dimeObserver = new DimeObserver(gumballMachine);
+        
         RandomPicker randompicker = new RandomPicker();
         addObject(randompicker, 643, 104);
         randompicker.setLocation(655, 94);

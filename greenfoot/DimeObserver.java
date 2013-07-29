@@ -11,6 +11,7 @@ public class DimeObserver extends CoinObserver
     public DimeObserver(GumballMachine gumballMachine)
     {
         super(gumballMachine);
+        gumballMachine.attach(this);
     }
     
     public void update(Coin coin)

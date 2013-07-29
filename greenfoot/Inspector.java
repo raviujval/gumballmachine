@@ -11,6 +11,7 @@ public class Inspector extends CoinObserver
     public Inspector(GumballMachine gumballMachine)
     {
         super(gumballMachine);
+        gumballMachine.attach(this);
     }
     
     public void update(Coin coin)

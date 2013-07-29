@@ -11,6 +11,7 @@ public class NickelObserver extends CoinObserver
     public NickelObserver(GumballMachine gumballMachine)
     {
         super(gumballMachine);
+        gumballMachine.attach(this);
     }
     
     public void update(Coin coin)

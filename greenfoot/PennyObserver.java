@@ -11,6 +11,7 @@ public class PennyObserver extends CoinObserver
     public PennyObserver(GumballMachine gumballMachine)
     {
         super(gumballMachine);
+        gumballMachine.attach(this);
     }
     
     public void update(Coin coin)

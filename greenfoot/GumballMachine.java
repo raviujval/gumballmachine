@@ -75,12 +75,6 @@ public class GumballMachine extends Subject
         {
             state = outOfGumballState;
         }
-        
-        attach(new Inspector(this));
-        attach(new PennyObserver(this));
-        attach(new NickelObserver(this));
-        attach(new DimeObserver(this));
-        attach(new QuarterObserver(this));
     }
 
     public void act() 
