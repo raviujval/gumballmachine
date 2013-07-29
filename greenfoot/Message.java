@@ -9,6 +9,12 @@ public class Message extends Actor
         gi = new GreenfootImage( 100, 50);
         setImage(gi);        
     }
+    
+    public Message(int x, int y)
+    {
+        gi = new GreenfootImage( x, y);
+        setImage(gi); 
+    }
 
     public void setText( String msg )
     {

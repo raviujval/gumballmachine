@@ -41,10 +41,7 @@ public class GumballMachine extends Subject
     
     public static synchronized GumballMachine getInstance(int redGumballCount, int blueGumballCount, int greenGumballCount)
     {
-        if(gumballMachine == null)
-        {
-            gumballMachine = new GumballMachine(redGumballCount, blueGumballCount, greenGumballCount);
-        }
+        gumballMachine = new GumballMachine(redGumballCount, blueGumballCount, greenGumballCount);
         return gumballMachine;
     }  
     
@@ -56,7 +53,7 @@ public class GumballMachine extends Subject
     private GumballMachine(int redGumballCount, int blueGumballCount, int greenGumballCount)
     {
         GreenfootImage image = getImage() ;
-        image.scale( 350, 400 ) ; 
+        image.scale( 250, 500 ) ; 
         
         this.redGumballCount = redGumballCount;
         this.blueGumballCount = blueGumballCount;
@@ -81,26 +78,56 @@ public class GumballMachine extends Subject
     {
         int mouseX, mouseY ;
 
-        if(Greenfoot.mousePressed(this)) {          
+        if(Greenfoot.mousePressed(this)) {
+            
             MouseInfo mouse = Greenfoot.getMouseInfo();  
             mouseX=mouse.getX();  
             mouseY=mouse.getY();  
+            
+            System.out.println("MouseX :" + mouseX + " MouseY: " + mouseY);
+            
+            if((mouseX > 260 && mouseX < 335) && (mouseY > 395 && mouseY < 400))
+            {
+                System.out.println("Turn Crank is getting called !");
+                turnCrank();
+            }
+            
+            /*
             Message m = new Message() ;
             m.setText( "Hello There!" ) ;
             World world = getWorld() ;
             world.addObject(m, mouseX, mouseY) ;
+            */
         }
 
         Actor coin;
-        coin = getOneIntersectingObject( Coin.class ) ;
+        coin = getOneObjectAtOffset(5, 50, Coin.class);
+        /*coin = getOneIntersectingObject( Coin.class ) ; */
         if ( coin != null )
         {
             System.out.println( coin.toString() ) ;
             insertCoin((Coin)coin);
-            //World world = getWorld() ;
-            //world.removeObject( coin ) ;
-        }
-    }   
+            removeAndAddBackCoin((Coin)coin);
+        } 
+    }  
+    
+    private void removeAndAddBackCoin(Coin coin)
+    {
+        World world = getWorld() ;
+        world.removeObject( coin ) ;
+        
+        if(coin instanceof Penny)
+            this.getWorld().addObject( new Penny(), 57, 71 ) ;
+        else if(coin instanceof Nickel)    
+            this.getWorld().addObject( new Nickel(), 61, 150 ) ;
+        else if(coin instanceof Dime)
+            this.getWorld().addObject( new Dime(), 65, 225 ) ;
+        else if(coin instanceof FakeQuarter)    
+            this.getWorld().addObject( new FakeQuarter(), 66, 420 ) ;    
+        else if(coin instanceof Quarter)    
+            this.getWorld().addObject( new Quarter(), 68, 320 ) ;
+    }
+            
     
     public void insertCoin(Coin coin)
     {
@@ -137,7 +164,11 @@ public class GumballMachine extends Subject
     
     private int determineCoinValue(Coin coin)
     {
-        if(coin instanceof Nickel)
+        if(coin instanceof FakeQuarter)
+        {
+            return 0;
+        }
+        else if(coin instanceof Nickel)
         {
             nickelCount++;
             return 5;

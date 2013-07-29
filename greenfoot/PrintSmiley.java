@@ -16,7 +16,7 @@ public class PrintSmiley extends Actor
     public PrintSmiley () 
     {
         GreenfootImage image = getImage() ;
-        image.scale( 50 , 50 ) ; 
+        image.scale( 35 , 35 ) ; 
     }
     public void act() 
     {
@@ -27,8 +27,10 @@ public class PrintSmiley extends Actor
             mouseX=mouse.getX();  
             mouseY=mouse.getY(); 
         
-        if (GumballMachine.getInstance().isPrintSmiley()) {
-                
+        if (!GumballMachine.getInstance().isPrintSmiley()) {
+           
+            GumballMachine.getInstance().setPrintSmiley(true);
+            
             Message m = new Message() ;
             m.setText( "Smiley Gumball !!" ) ;
             World world = getWorld() ;
@@ -36,6 +38,8 @@ public class PrintSmiley extends Actor
  
         }
         else {
+            GumballMachine.getInstance().setPrintSmiley(false);
+            
             Message m = new Message() ;
             m.setText( "Regular is also good!" ) ;
             World world = getWorld() ;

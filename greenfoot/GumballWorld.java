@@ -27,7 +27,7 @@ public class GumballWorld extends World
     private void prepare()
     {
         GumballMachine gumballMachine = GumballMachine.getInstance(5,5,5);
-        addObject(gumballMachine, 367, 237);
+        addObject(gumballMachine, 300, 280);
         addObject( new Penny(), 57, 71 ) ;
         addObject( new Nickel(), 61, 150 ) ;
         addObject( new Dime(), 65, 225 ) ;
@@ -35,7 +35,7 @@ public class GumballWorld extends World
         addObject( new FakeQuarter(), 66, 420 ) ;
 
         Inspector inspector = new Inspector(gumballMachine);
-        addObject(inspector, 500, 291);
+        addObject(inspector, 530, 291);
         //Registering Observers
         QuarterObserver quarterObserver = new QuarterObserver(gumballMachine);
         PennyObserver pennyObserver = new PennyObserver(gumballMachine);
@@ -55,9 +55,9 @@ public class GumballWorld extends World
         addObject(bluepicker, 510, 494);
         bluepicker.setLocation(510, 494);
         PrintSmiley printSmiley = new PrintSmiley();
-        addObject(printSmiley, 270,480);
+        addObject(printSmiley, 240,472);
         HoneyTopping honeyTopping = new HoneyTopping();
-        addObject(honeyTopping, 350,480);
+        addObject(honeyTopping, 357,470);
 
     }
 }

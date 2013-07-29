@@ -19,10 +19,10 @@ public class Inspector extends CoinObserver
         if(coin instanceof FakeQuarter)
         {
             // We can also add a sound shouting that Coin is a Fake !
-            Message m = new Message() ;
+            Message m = new Message(120,50) ;
             m.setText( "The Coin is a Fake!" ) ;
             World world = getWorld() ;
-            world.addObject(m, 270,420) ;
+            world.addObject(m, 540,200) ;
         }    
     
     }

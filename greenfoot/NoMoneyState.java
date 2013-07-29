@@ -21,7 +21,10 @@ public class NoMoneyState extends State
        if(this.gumballMachine.getTotal() == 0)
        {
            this.gumballMachine.calculateTotal(coin);
-           this.gumballMachine.setState(this.gumballMachine.getWaitingFor50CentsState());
+           if(this.gumballMachine.getTotal() > 0)
+           {
+               this.gumballMachine.setState(this.gumballMachine.getWaitingFor50CentsState());
+           }
            this.gumballMachine.displayTotal();
        }   
     }
@@ -29,9 +32,9 @@ public class NoMoneyState extends State
     @Override
     public void turnCrank()
     {
-        Message m = new Message() ;
+        Message m = new Message(350, 50) ;
         m.setText( "Please insert a total of 50 Cents before turning the Crank!" ) ;
-        World world = getWorld() ;
+        World world = this.gumballMachine.getWorld() ;
         world.addObject(m, 270,420) ; 
     } 
 }

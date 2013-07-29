@@ -21,7 +21,7 @@ public class OutOfGumballState extends State
     
         Message m = new Message() ;
         m.setText( "Out of Gumballs !" ) ;
-        World world = getWorld() ;
+        World world = this.gumballMachine.getWorld() ;
         world.addObject(m, 270,420) ;
     
     }
@@ -32,7 +32,7 @@ public class OutOfGumballState extends State
     
         Message m = new Message() ;
         m.setText( "Out of Gumballs !" ) ;
-        World world = getWorld() ;
+        World world = this.gumballMachine.getWorld() ;
         world.addObject(m, 270,420) ;
         
     }    

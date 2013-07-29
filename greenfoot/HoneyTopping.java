@@ -11,7 +11,7 @@ public class HoneyTopping extends Actor
     public HoneyTopping()
     {
         GreenfootImage image = getImage() ;
-        image.scale( 50 , 50 ) ; 
+        image.scale( 44 , 44 ) ; 
     }    
         
     
@@ -29,8 +29,10 @@ public class HoneyTopping extends Actor
             mouseX=mouse.getX();  
             mouseY=mouse.getY(); 
         
-        if (GumballMachine.getInstance().isHoneyTopping()) {
-                
+        if (!GumballMachine.getInstance().isHoneyTopping()) {
+            
+            GumballMachine.getInstance().setHoneyTopping(true);
+            
             Message m = new Message() ;
             m.setText( "Honey Topping !!" ) ;
             World world = getWorld() ;
@@ -38,6 +40,9 @@ public class HoneyTopping extends Actor
  
         }
         else {
+            
+            GumballMachine.getInstance().setHoneyTopping(false);
+            
             Message m = new Message() ;
             m.setText( "Regular is also good!" ) ;
             World world = getWorld() ;
