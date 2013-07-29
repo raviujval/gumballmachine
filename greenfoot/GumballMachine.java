@@ -96,8 +96,9 @@ public class GumballMachine extends Subject
         if ( coin != null )
         {
             System.out.println( coin.toString() ) ;
-            World world = getWorld() ;
-            world.removeObject( coin ) ;
+            insertCoin((Coin)coin);
+            //World world = getWorld() ;
+            //world.removeObject( coin ) ;
         }
     }   
     
@@ -174,6 +175,8 @@ public class GumballMachine extends Subject
     
     public void notifyObservers(Coin coin)
     {
+        System.out.println("Number of Observers: " + observers.size());
+        
         for(Observer observer : observers)
         {
             observer.update(coin);
