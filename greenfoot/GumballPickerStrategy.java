@@ -9,7 +9,7 @@ import java.util.List;
  */
 public abstract class GumballPickerStrategy extends Actor
 {
-    public List<Picker> implementStrategy(GumballMachine gumballMachine)
+    public List<Picker> implementStrategy(int pennyCount, int nickelCount, int dimeCount, int quarterCount)
     {
         return null;
     }    

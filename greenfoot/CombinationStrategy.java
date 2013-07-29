@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class CombinationStrategy extends GumballPickerStrategy
 {
-    public List<Picker> implementStrategy(GumballMachine gumballMachine)
+    public List<Picker> implementStrategy(int pennyCount, int nickelCount, int dimeCount, int quarterCount)
     {
         
         List<Picker> pickers = new ArrayList<Picker>();
@@ -19,11 +19,6 @@ public class CombinationStrategy extends GumballPickerStrategy
         boolean nickelInserted = false;
         boolean dimeInserted = false;
         boolean quarterInserted = false;
-        
-        int pennyCount = gumballMachine.getPennyCount();
-        int nickelCount = gumballMachine.getNickelCount();
-        int dimeCount = gumballMachine.getDimeCount();
-        int quarterCount = gumballMachine.getQuarterCount();
         
         if(pennyCount > 0)
             pennyInserted = true;

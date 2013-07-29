@@ -35,6 +35,8 @@ public class GumballMachine extends Actor
     
     private Inspector inspector;
     
+    private GumballPickerStrategy strategy;
+    
     public static synchronized GumballMachine getInstance(int redGumballCount, int blueGumballCount, int greenGumballCount)
     {
         if(gumballMachine == null)
@@ -278,6 +280,16 @@ public class GumballMachine extends Actor
     public int getTotalGumballCount()
     {
         return (redGumballCount + blueGumballCount + greenGumballCount);
-    }        
+    }   
+    
+    public void changeStrategy(GumballPickerStrategy s)
+    {
+        this.strategy = s;
+    }
+    
+    public GumballPickerStrategy getStrategy()
+    {
+        return this.strategy;
+    }
     
 }

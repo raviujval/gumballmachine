@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
+import java.util.List;
 
 /**
  * Write a description of class HasMoneyState here.
@@ -9,6 +11,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HasMoneyState extends State
 {
     private GumballMachine gumballMachine;
+    
+    private Random random = new Random();
     
     public HasMoneyState(GumballMachine gumballMachine)
     {
@@ -28,6 +32,30 @@ public class HasMoneyState extends State
     public void turnCrank()
     {
         //Invoke code for Strategy Pattern here.
+        int selection = random.nextInt(2);
+        
+        switch(selection) {
+            case 0: 
+                    this.gumballMachine.changeStrategy(new CombinationStrategy());
+                    break;
+            
+            case 1: 
+                    this.gumballMachine.changeStrategy(new CountStrategy());
+                    break;
+            
+            default:         
+                    this.gumballMachine.changeStrategy(new CombinationStrategy());
+                    break;            
+        }
+        
+        int pennyCount = this.gumballMachine.getPennyCount();
+        int nickelCount = this.gumballMachine.getNickelCount();
+        int dimeCount = this.gumballMachine.getDimeCount();
+        int quarterCount = this.gumballMachine.getQuarterCount();
+        
+        List<Picker> pickersChain = this.gumballMachine.getStrategy().implementStrategy(pennyCount, nickelCount, dimeCount, quarterCount);
+
+        //Invoke Chain-of-Responsibility here.
         
         if(this.gumballMachine.getTotalGumballCount() == 0)
         {

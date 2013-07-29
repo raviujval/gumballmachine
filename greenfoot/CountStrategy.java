@@ -10,15 +10,10 @@ import java.util.ArrayList;
  */
 public class CountStrategy extends GumballPickerStrategy
 {
-    public List<Picker> implementStrategy(GumballMachine gumballMachine)
+    public List<Picker> implementStrategy(int pennyCount, int nickelCount, int dimeCount, int quarterCount)
     {
         
         List<Picker> pickers = new ArrayList<Picker>();
-        
-        int pennyCount = gumballMachine.getPennyCount();
-        int nickelCount = gumballMachine.getNickelCount();
-        int dimeCount = gumballMachine.getDimeCount();
-        int quarterCount = gumballMachine.getQuarterCount();
         
         if(quarterCount > 0)
         {   
