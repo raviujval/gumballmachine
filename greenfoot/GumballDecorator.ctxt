@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=G
+comment0.target=void\ changeImage(Gumball)
+comment0.text=\ \n\ \n\ \ \ \ \ protected\ Gumball\ tempgumball\ ;\n\ \ \ \ \n\ \ \ \ public\ GumballDecorator\ (\ Gumball\ G)\ {\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ tempgumball\ \=\ G;\n\ \ \ \ }\n\ \ \ \ \n
+comment1.params=G
+comment1.target=void\ changeDesc(Gumball)
+numComments=2

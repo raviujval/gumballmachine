@@ -16,7 +16,7 @@ public class HoneyTopping extends Actor
         
     
     
-    /**
+     /**
      * Act - do whatever the HoneyDip wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -29,10 +29,8 @@ public class HoneyTopping extends Actor
             mouseX=mouse.getX();  
             mouseY=mouse.getY(); 
         
-        if (!GumballMachine.getInstance().isHoneyTopping()) {
-            
-            GumballMachine.getInstance().setHoneyTopping(true);
-            
+        if ( ! GumballMachine.getInstance().isHoneyTopping()) {
+            GumballMachine.getInstance().setHoneyTopping(true);     
             Message m = new Message() ;
             m.setText( "Honey Topping !!" ) ;
             World world = getWorld() ;
@@ -40,11 +38,9 @@ public class HoneyTopping extends Actor
  
         }
         else {
-            
-            GumballMachine.getInstance().setHoneyTopping(false);
-            
+            GumballMachine.getInstance().setHoneyTopping(false);  
             Message m = new Message() ;
-            m.setText( "Regular is also good!" ) ;
+            m.setText( "No Honey for you" ) ;
             World world = getWorld() ;
             world.addObject(m, 350,420) ;
         }

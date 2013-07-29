@@ -15,5 +15,10 @@ public class GreenGumball extends Gumball
     public void act() 
     {
         // Add your action code here.
-    }    
+    } 
+    
+        public void GreenGumball()
+    {
+        setDescription("Green Gumball") ;
+    }
 }
