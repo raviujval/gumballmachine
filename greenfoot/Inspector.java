@@ -1,6 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Write a description of class Inspector here.
@@ -8,46 +6,23 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Inspector extends Alien
+public class Inspector extends CoinObserver
 {
-
-    private ArrayList<Picker> pickers = new ArrayList<Picker>() ;
-
-    public void addPicker(Picker obj) {
-        pickers.add(obj) ;
-    }
-
-    public void removePicker(Picker obj) {
-        pickers.remove(obj) ;
+    public Inspector(GumballMachine gumballMachine)
+    {
+        super(gumballMachine);
     }
     
-    public void inspect(Coin coin )
+    public void update(Coin coin)
     {
         if(coin instanceof FakeQuarter)
         {
+            // We can also add a sound shouting that Coin is a Fake !
             Message m = new Message() ;
-            m.setText( "Fake Coin! Please insert a Valid Coin" ) ;
+            m.setText( "The Coin is a Fake!" ) ;
             World world = getWorld() ;
             world.addObject(m, 270,420) ;
-        }
-        
-    }
+        }    
     
-    /*
-    public void act(){
-        World world = getWorld() ;
-        
-        List<GreenPicker> gps = world.getObjects(GreenPicker.class) ;
-        GreenPicker gp = gps.get(0) ;
-        List<RedPicker> rps = world.getObjects(RedPicker.class) ;
-        RedPicker rp = rps.get(0) ;
-        List<BluePicker> bps = world.getObjects(BluePicker.class) ;
-        BluePicker bp = bps.get(0) ;
-        
-        gp.getGumball() ;
-        gp.setSuccessor(rp) ;
-        rp.setSuccessor(bp) ;
     }
-    */
-    
 }

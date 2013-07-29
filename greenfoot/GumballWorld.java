@@ -26,15 +26,15 @@ public class GumballWorld extends World
      */
     private void prepare()
     {
-        GumballMachine gumballmachine = GumballMachine.getInstance(5,5,5);
-        addObject(gumballmachine, 367, 237);
+        GumballMachine gumballMachine = GumballMachine.getInstance(5,5,5);
+        addObject(gumballMachine, 367, 237);
         addObject( new Penny(), 57, 71 ) ;
         addObject( new Nickel(), 61, 150 ) ;
         addObject( new Dime(), 65, 225 ) ;
         addObject( new Quarter(), 68, 320 ) ;
         addObject( new FakeQuarter(), 66, 420 ) ;
 
-        Inspector inspector = new Inspector();
+        Inspector inspector = new Inspector(gumballMachine);
         addObject(inspector, 500, 291);
         RandomPicker randompicker = new RandomPicker();
         addObject(randompicker, 643, 104);

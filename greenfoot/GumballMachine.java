@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Write a description of class GumballMachine here.
@@ -6,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GumballMachine extends Actor
+public class GumballMachine extends Subject
 {
     private static GumballMachine gumballMachine;
     
@@ -33,9 +35,9 @@ public class GumballMachine extends Actor
     
     private State state;
     
-    private Inspector inspector;
-    
     private GumballPickerStrategy strategy;
+    
+    private List<Observer> observers = new ArrayList<Observer>();
     
     public static synchronized GumballMachine getInstance(int redGumballCount, int blueGumballCount, int greenGumballCount)
     {
@@ -65,8 +67,6 @@ public class GumballMachine extends Actor
         hasMoneyState = new HasMoneyState(this);
         outOfGumballState = new OutOfGumballState(this);
         
-        inspector = new Inspector();
-        
         if((redGumballCount + blueGumballCount + greenGumballCount) > 0)
         {
             state = noMoneyState;
@@ -74,7 +74,13 @@ public class GumballMachine extends Actor
         else
         {
             state = outOfGumballState;
-        }    
+        }
+        
+        attach(new Inspector(this));
+        attach(new PennyObserver(this));
+        attach(new NickelObserver(this));
+        attach(new DimeObserver(this));
+        attach(new QuarterObserver(this));
     }
 
     public void act() 
@@ -103,7 +109,7 @@ public class GumballMachine extends Actor
     
     public void insertCoin(Coin coin)
     {
-        inspector.inspect(coin);
+        notifyObservers(coin);
         state.insertCoin(coin);
     }    
     
@@ -161,6 +167,24 @@ public class GumballMachine extends Actor
             return 0;
         }
     }        
+    
+    public void attach(Observer observer)
+    {
+        this.observers.add(observer);
+    }
+    
+    public void detach(Observer observer)
+    {
+        this.observers.remove(observer);
+    }
+    
+    public void notifyObservers(Coin coin)
+    {
+        for(Observer observer : observers)
+        {
+            observer.update(coin);
+        }
+    }
     
     public void setHoneyTopping(boolean b)
     {
