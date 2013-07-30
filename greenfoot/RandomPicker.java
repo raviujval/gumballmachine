@@ -16,30 +16,27 @@ public class RandomPicker extends Picker
        Message m = new Message() ;
        
        if (gumballmachine.getGreenGumballCount()>0) {
+           gumballmachine.setGreenGumballCount(gumballmachine.getGreenGumballCount() - 1);
            m.setText( "I'll pick green!" ) ;
            GreenGumball gg = new  GreenGumball() ;
-           this.dispenseGumball(m,gg) ;
+           super.dispenseGumball(m,580,100,gg,gumballmachine) ;
         } else if (gumballmachine.getRedGumballCount()>0) {
+           gumballmachine.setRedGumballCount(gumballmachine.getRedGumballCount() - 1);
            m.setText( "I'll pick red!" ) ;
            RedGumball rg = new  RedGumball() ;
-           this.dispenseGumball(m,rg) ;
+           super.dispenseGumball(m,580,100,rg,gumballmachine) ;
         } else if (gumballmachine.getBlueGumballCount()>0) {
+           gumballmachine.setBlueGumballCount(gumballmachine.getBlueGumballCount() - 1); 
            m.setText( "I'll pick blue!" ) ;
            BlueGumball rg = new  BlueGumball() ;
-           this.dispenseGumball(m,rg) ;
+           super.dispenseGumball(m,580,100,rg,gumballmachine) ;
         } else {
-           m.setText( "No more Gumball left!" ) ;
-           world.addObject(m, 500, 291) ; 
+           displayNoGumballsLeft(gumballmachine); 
         }
     }
     
     public void setSuccessor (Picker picker) {
         successor = picker;
     }
-    
-    public void dispenseGumball(Message m, Gumball gumball) {
-         World world = getWorld() ;
-         world.addObject(m, 580, 100) ;
-         world.addObject(gumball, 369, 389) ;
-    }
+       
 }

@@ -64,22 +64,30 @@ public class HasMoneyState extends State
         System.out.println("Quarter Count: " + quarterCount);
         
         List<Picker> pickersChain = this.gumballMachine.getStrategy().implementStrategy(pennyCount, nickelCount, dimeCount, quarterCount);
-
+        
         for(Picker picker : pickersChain)
         {
             System.out.println("Picker Name: " + picker.getClass().getName());
         }
         
-        //Invoke Chain-of-Responsibility here.
-        
-        if(this.gumballMachine.getTotalGumballCount() == 0)
+        if(pickersChain != null && !pickersChain.isEmpty())
         {
-            Message m = new Message(370, 50) ;
-            m.setText( "No more Gumballs! We are sorry, your money cannot be returned!" ) ;
-            World world = this.gumballMachine.getWorld();
-            world.addObject(m, 270,420) ;
+            Picker picker = null;
             
-            this.gumballMachine.setState(this.gumballMachine.getOutOfGumballState());
+            for(int count=0; count<pickersChain.size(); count++)
+            {
+                picker = pickersChain.get(count);
+                
+                if((picker != null) && !(picker instanceof RandomPicker) && (count < (pickersChain.size()-1)))
+                {
+                    picker.setSuccessor(pickersChain.get(count + 1));
+                }
+                else{
+                    break;
+                }
+            }
+            
+            pickersChain.get(0).getGumball();
         }
     }   
 }

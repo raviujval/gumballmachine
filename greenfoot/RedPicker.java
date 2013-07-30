@@ -11,15 +11,15 @@ public class RedPicker extends Picker
     }    
     
     public void getGumball() {
-       World world = getWorld() ;
        GumballMachine gumballmachine = GumballMachine.getInstance();
+       World world = gumballmachine.getWorld();
        
        if (gumballmachine.getRedGumballCount()>0) {
-            Message m = new Message() ;
-            m.setText( "I'll pick red!" ) ;
-            world.addObject(m, 640, 280) ;
-            RedGumball rg = new  RedGumball() ;
-            world.addObject(rg, 369, 389) ;
+           gumballmachine.setRedGumballCount(gumballmachine.getRedGumballCount() - 1);          
+           Message m = new Message() ;
+           m.setText( "I'll pick red!" ) ;
+           RedGumball rg = new  RedGumball() ;
+           super.dispenseGumball(m,640,280,rg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No red left!" ) ;

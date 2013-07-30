@@ -11,17 +11,17 @@ public class BluePicker extends Picker
     }   
     
     public void getGumball() {
-       World world = getWorld() ;
        GumballMachine gumballmachine = GumballMachine.getInstance();
+       World world = gumballmachine.getWorld();
        
        Boolean isAnyBlueGumballLeft = false ;
        //Message is displayed
        if (gumballmachine.getBlueGumballCount()>0) {
+            gumballmachine.setBlueGumballCount(gumballmachine.getBlueGumballCount() - 1);
             Message m = new Message() ;
             m.setText( "I'll pick blue!" ) ;
-            world.addObject(m, 551,94) ;
             BlueGumball bg = new  BlueGumball() ;
-            world.addObject(bg, 369, 389) ;
+            super.dispenseGumball(m,450,494,bg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No blue left!" ) ;

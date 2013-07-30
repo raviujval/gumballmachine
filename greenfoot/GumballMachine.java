@@ -88,7 +88,7 @@ public class GumballMachine extends Subject
             
             System.out.println("MouseX :" + mouseX + " MouseY: " + mouseY);
             
-            if((mouseX > 260 && mouseX < 335) && (mouseY > 395 && mouseY < 400))
+            if((mouseX > 255 && mouseX < 345) && (mouseY > 380 && mouseY < 410))
             {
                 System.out.println("Turn Crank is getting called !");
                 turnCrank();
@@ -227,6 +227,14 @@ public class GumballMachine extends Subject
         }
     }
     
+    public void resetState()
+    {
+        this.setRedGumballCount(0);
+        this.setBlueGumballCount(0);
+        this.setGreenGumballCount(0);
+        this.state = noMoneyState;
+    }
+    
     public void setHoneyTopping(boolean b)
     {
         honeyTopping = b;
@@ -312,14 +320,29 @@ public class GumballMachine extends Subject
         return this.redGumballCount;
     }
     
+    public void setRedGumballCount(int redGumballCount)
+    {
+        this.redGumballCount = redGumballCount;
+    }
+    
     public int getBlueGumballCount()
     {
         return this.blueGumballCount;
     }
     
+    public void setBlueGumballCount(int blueGumballCount)
+    {
+        this.blueGumballCount = blueGumballCount;
+    }
+    
     public int getGreenGumballCount()
     {
         return this.greenGumballCount;
+    }
+    
+    public void setGreenGumballCount(int greenGumballCount)
+    {
+        this.greenGumballCount = greenGumballCount;
     }
     
     public State getWaitingFor50CentsState()
