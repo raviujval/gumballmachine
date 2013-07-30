@@ -140,15 +140,6 @@ public class GumballMachine extends Subject
     public void turnCrank()
     {
         state.turnCrank();
-        
-        if(isPrintSmiley())
-        {
-            //invoke decorator pattern here
-        }
-        if(isHoneyTopping())
-        {
-           //invoke decorator pattern here     
-        }
     }
     
     public void calculateTotal(Coin coin)
@@ -167,10 +158,7 @@ public class GumballMachine extends Subject
     private int determineCoinValue(Coin coin)
     {
         if(coin instanceof FakeQuarter)
-        {
-            coinSound = new GreenfootSound("FakeCoin.wav");
-            coinSound.play();
-            
+        {   
             return 0;
         }
         else if(coin instanceof Nickel)

@@ -18,6 +18,9 @@ public class Inspector extends CoinObserver
     {
         if(coin instanceof FakeQuarter)
         {
+            coinSound = new GreenfootSound("FakeCoin.wav");
+            coinSound.play();
+            
             // We can also add a sound shouting that Coin is a Fake !
             Message m = new Message(120,50) ;
             m.setText( "The Coin is a Fake!" ) ;

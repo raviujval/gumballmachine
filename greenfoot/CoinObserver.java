@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CoinObserver extends Observer
 {
-    private GumballMachine gumballMachine;
+    protected GumballMachine gumballMachine;
+    protected GreenfootSound coinSound;
     
     public CoinObserver(GumballMachine gumballMachine)
     {

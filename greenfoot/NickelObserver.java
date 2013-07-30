@@ -18,7 +18,11 @@ public class NickelObserver extends CoinObserver
     {
         if(coin instanceof Nickel)
         {
-            // Sound shouting that Nickel is inserted !
+            if(super.gumballMachine.getTotal() <= 50)
+            {
+                coinSound = new GreenfootSound("Nickel.wav");
+                coinSound.play();
+            }
         }
     }
 }
