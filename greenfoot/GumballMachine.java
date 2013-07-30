@@ -37,6 +37,8 @@ public class GumballMachine extends Subject
     
     private GumballPickerStrategy strategy;
     
+    private  GreenfootSound coinSound;
+    
     private List<Observer> observers = new ArrayList<Observer>();
     
     public static synchronized GumballMachine getInstance(int redGumballCount, int blueGumballCount, int greenGumballCount)
@@ -166,26 +168,37 @@ public class GumballMachine extends Subject
     {
         if(coin instanceof FakeQuarter)
         {
+            coinSound = new GreenfootSound("FakeCoin.wav");
+            coinSound.play();
+            
             return 0;
         }
         else if(coin instanceof Nickel)
         {
             nickelCount++;
+            coinSound = new GreenfootSound("Nickel.wav");
+            coinSound.play();
             return 5;
         }
         else if(coin instanceof Dime)
         {
             dimeCount++;
+            coinSound = new GreenfootSound("Dime.wav");
+            coinSound.play();
             return 10;
         }
         else if(coin instanceof Quarter)
         {
             quarterCount++;
+            coinSound = new GreenfootSound("Quarter.wav");
+            coinSound.play();
             return 25;
         }
         else if(coin instanceof Penny)
         {
             pennyCount++;
+            coinSound = new GreenfootSound("Penny.wav");
+            coinSound.play();
             return 1;
         }
         else
