@@ -43,17 +43,17 @@ public class GumballWorld extends World
         DimeObserver dimeObserver = new DimeObserver(gumballMachine);
         
         RandomPicker randompicker = new RandomPicker();
-        addObject(randompicker, 643, 104);
-        randompicker.setLocation(655, 94);
+        addObject(randompicker, 551, 498);
+        randompicker.setLocation(551, 498);
         GreenPicker greenpicker = new GreenPicker();
-        addObject(greenpicker, 686, 454);
-        greenpicker.setLocation(669, 456);
+        addObject(greenpicker, 707, 400);
+        greenpicker.setLocation(707, 400);
         RedPicker redpicker = new RedPicker();
-        addObject(redpicker, 720, 291);
-        redpicker.setLocation(720, 291);
+        addObject(redpicker, 707, 206);
+        redpicker.setLocation(707, 206);
         BluePicker bluepicker = new BluePicker();
-        addObject(bluepicker, 510, 494);
-        bluepicker.setLocation(510, 494);
+        addObject(bluepicker, 551,94);
+        bluepicker.setLocation(551,94);
         PrintSmiley printSmiley = new PrintSmiley();
         addObject(printSmiley, 240,472);
         HoneyTopping honeyTopping = new HoneyTopping();

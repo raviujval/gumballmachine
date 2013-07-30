@@ -12,7 +12,7 @@ public class Alien extends Actor
     public Alien()
     {
         GreenfootImage image = getImage() ;
-        image.scale( 150, 180 ) ; 
+        image.scale( 130, 170 ) ; 
     }
 
     public void act() 

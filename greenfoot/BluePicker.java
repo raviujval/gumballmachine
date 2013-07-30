@@ -19,13 +19,13 @@ public class BluePicker extends Picker
        if (gumballmachine.getBlueGumballCount()>0) {
             Message m = new Message() ;
             m.setText( "I'll pick blue!" ) ;
-            world.addObject(m, 450, 494) ;
+            world.addObject(m, 551,94) ;
             BlueGumball bg = new  BlueGumball() ;
             world.addObject(bg, 369, 389) ;
         } else {
            Message m = new Message() ;
            m.setText( "No blue left!" ) ;
-           world.addObject(m, 450, 494) ; 
+           world.addObject(m, 551,94) ; 
            if (successor != null) {
                successor.getGumball() ;
             }
