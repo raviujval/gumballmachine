@@ -16,7 +16,7 @@ public  abstract class Gumball  extends Actor
     {
         //description="Gumball" ;
         GreenfootImage image = getImage() ;
-        image.scale( 100, 100 ) ; 
+        image.scale( 50, 50 ) ; 
     }
     
    

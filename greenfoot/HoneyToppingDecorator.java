@@ -35,8 +35,8 @@ public class HoneyToppingDecorator extends GumballDecorator
             
             image1=this.gumball.getImage() ;
             htimage = new GreenfootImage("honeydrop.png");
-            htimage.scale(20,20);
-            image1.drawImage(htimage, 40,10);
+            htimage.scale(25,25);
+            image1.drawImage(htimage, 15,1);
             this.setImage(image1);
         }
         public void changeDesc () {

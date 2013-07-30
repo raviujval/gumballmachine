@@ -31,7 +31,7 @@ public class Picker extends Alien
         
          World world = gumballmachine.getWorld() ;
          world.addObject(m, x, y) ;
-         world.addObject(gumball, 369, 389) ;
+         world.addObject(gumball, 298, 508) ;
          
          gumballmachine.resetState();
     } 

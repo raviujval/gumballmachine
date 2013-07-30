@@ -37,8 +37,8 @@ public class SmileyDecorator extends GumballDecorator
             
             image1=this.gumball.getImage() ;
             smimage = new GreenfootImage("smiley.png");
-            smimage.scale(25,25);
-            image1.drawImage(smimage, 35,35);
+            smimage.scale(20,20);
+            image1.drawImage(smimage, 15,20);
             this.setImage(image1);
         }
         
