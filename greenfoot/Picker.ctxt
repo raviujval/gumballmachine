@@ -1,4 +1,10 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ getGumball()
-numComments=1
+comment1.params=picker
+comment1.target=void\ setSuccessor(Picker)
+comment2.params=gumballMachine
+comment2.target=void\ displayNoGumballsLeft(GumballMachine)
+comment3.params=m\ x\ y\ gumball\ gumballmachine
+comment3.target=void\ dispenseGumball(Message,\ int,\ int,\ Gumball,\ GumballMachine)
+numComments=4

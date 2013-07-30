@@ -12,15 +12,15 @@ public class GreenPicker extends Picker
     }    
     
     public void getGumball() {
-       World world = getWorld() ;
        GumballMachine gumballmachine = GumballMachine.getInstance();
+       World world = gumballmachine.getWorld();
        
        if (gumballmachine.getGreenGumballCount()>0) {
+           gumballmachine.setGreenGumballCount(gumballmachine.getGreenGumballCount() - 1);
            Message m = new Message() ;
            m.setText( "I'll pick green!" ) ;
-           world.addObject(m, 580, 440) ;
            GreenGumball gg = new  GreenGumball() ;
-           world.addObject(gg, 369, 389) ;
+           super.dispenseGumball(m,580,440,gg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No green left!" ) ;
