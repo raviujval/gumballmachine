@@ -89,6 +89,8 @@ public class GumballMachine extends Subject
             if((mouseX > 255 && mouseX < 345) && (mouseY > 380 && mouseY < 410))
             {
                 System.out.println("Turn Crank is getting called !");
+                GreenfootSound crankSound = new GreenfootSound("Crank.mp3");
+                crankSound.play();
                 turnCrank();
             }
         }
