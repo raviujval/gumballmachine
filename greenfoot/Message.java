@@ -31,5 +31,13 @@ public class Message extends Actor
             World world = getWorld();
             world.removeObject( this ) ;
         }
-    }    
+    }  
+    
+    public void display(int x, int y)
+    {
+        GumballMachine gumballMachine = GumballMachine.getInstance();
+        gumballMachine.getWorld().addObject(this, x, y);
+        Greenfoot.delay(70);
+        gumballMachine.getWorld().removeObject(this);
+    }
 }

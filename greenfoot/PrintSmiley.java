@@ -27,23 +27,18 @@ public class PrintSmiley extends Actor
             MouseInfo mouse = Greenfoot.getMouseInfo();  
             mouseX=mouse.getX();  
             mouseY=mouse.getY(); 
-        
-        
+                
         if (! GumballMachine.getInstance().isPrintSmiley()) {
             GumballMachine.getInstance().setPrintSmiley(true);    
             Message m = new Message() ;
             m.setText( "Smiley Gumball !!" ) ;
-            World world = getWorld() ;
-            world.addObject(m, 270,420) ;
-            
- 
+            m.display(270,420);
         }
         else {
             GumballMachine.getInstance().setPrintSmiley(false); 
             Message m = new Message() ;
             m.setText( "No Smiley" ) ;
-            World world = getWorld() ;
-            world.addObject(m, 270,420) ;
+            m.display(270,420);
         }
         
     }    

@@ -18,33 +18,29 @@ public class HoneyToppingDecorator extends GumballDecorator
      */
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.mousePressed(this)) {  
+            GumballMachine gumballMachine = GumballMachine.getInstance();
+            gumballMachine.getWorld().removeObject(this);
+        }
     }   
     
-     public HoneyToppingDecorator(Gumball G) {
-         
-	        this.gumball = G;
-	         
-	        System.out.println("Adding HoneyTopping");	
-	        changeImage();
-	        changeDesc();
-
-        }
+    public HoneyToppingDecorator(Gumball G) {
+        this.gumball = G;
+        System.out.println("Adding HoneyTopping");	
+        changeImage();
+        changeDesc();
+    }
     
-        public void changeImage() {
-            
-            image1=this.gumball.getImage() ;
-            htimage = new GreenfootImage("honeydrop.png");
-            htimage.scale(25,25);
-            image1.drawImage(htimage, 15,1);
-            this.setImage(image1);
-        }
-        public void changeDesc () {
-            //tempDesc = this.gumball.getDescription();
-            //tempDesc = tempDesc + " with Sweet Honey " ;
-            //this.setDescription(tempDesc);
-            tempDesc = description + " With Honey " ;
-            description=tempDesc;
+    public void changeImage() {
+        image1=this.gumball.getImage() ;
+        htimage = new GreenfootImage("honeydrop.png");
+        htimage.scale(25,25);
+        image1.drawImage(htimage, 15,1);
+        this.setImage(image1);
+    }
+    public void changeDesc () {
+        tempDesc = description + " With Honey " ;
+        description=tempDesc;
     }
 }
 

@@ -18,7 +18,7 @@ public class QuarterObserver extends CoinObserver
     {
         if(!(coin instanceof FakeQuarter) && (coin instanceof Quarter))
         {
-            if(super.gumballMachine.getTotal() <= 50)
+            if(super.gumballMachine.getTotal() < 50)
             {
                 coinSound = new GreenfootSound("Quarter.wav");
                 coinSound.play();

@@ -21,11 +21,11 @@ public class BluePicker extends Picker
             Message m = new Message() ;
             m.setText( "I'll pick blue!" ) ;
             BlueGumball bg = new  BlueGumball() ;
-            super.dispenseGumball(m,450,494,bg,gumballmachine);
+            super.dispenseGumball(m,462,45,bg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No blue left!" ) ;
-           world.addObject(m, 551,94) ; 
+           m.display(462,45);
            if (successor != null) {
                successor.getGumball() ;
             }

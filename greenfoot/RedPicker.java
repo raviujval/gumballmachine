@@ -19,11 +19,11 @@ public class RedPicker extends Picker
            Message m = new Message() ;
            m.setText( "I'll pick red!" ) ;
            RedGumball rg = new  RedGumball() ;
-           super.dispenseGumball(m,640,280,rg,gumballmachine);
+           super.dispenseGumball(m,720,120,rg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No red left!" ) ;
-           world.addObject(m, 640, 280) ; 
+           m.display(720,120);
            if (successor != null) {
                successor.getGumball() ;
             }

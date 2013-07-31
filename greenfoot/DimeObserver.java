@@ -18,7 +18,7 @@ public class DimeObserver extends CoinObserver
     {
         if(coin instanceof Dime)
         {
-            if(super.gumballMachine.getTotal() <= 50)
+            if(super.gumballMachine.getTotal() < 50)
             {
                 coinSound = new GreenfootSound("Dime.wav");
                 coinSound.play();

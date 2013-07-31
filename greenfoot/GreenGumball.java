@@ -14,7 +14,10 @@ public class GreenGumball extends Gumball
      */
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.mousePressed(this)) {  
+            GumballMachine gumballMachine = GumballMachine.getInstance();
+            gumballMachine.getWorld().removeObject(this);
+        }
     } 
     
         public void GreenGumball()

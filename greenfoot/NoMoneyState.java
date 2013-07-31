@@ -34,7 +34,11 @@ public class NoMoneyState extends State
     {
         Message m = new Message(350, 50) ;
         m.setText( "Please insert a total of 50 Cents before turning the Crank!" ) ;
+        //m.display(270,420);
         World world = this.gumballMachine.getWorld() ;
-        world.addObject(m, 270,420) ; 
+        world.addObject(m, 270, 420) ;
+    
+        Greenfoot.delay(180);
+        world.removeObject(m);
     } 
 }

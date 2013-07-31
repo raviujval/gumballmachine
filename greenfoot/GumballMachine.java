@@ -86,20 +86,11 @@ public class GumballMachine extends Subject
             mouseX=mouse.getX();  
             mouseY=mouse.getY();  
             
-            System.out.println("MouseX :" + mouseX + " MouseY: " + mouseY);
-            
             if((mouseX > 255 && mouseX < 345) && (mouseY > 380 && mouseY < 410))
             {
                 System.out.println("Turn Crank is getting called !");
                 turnCrank();
             }
-            
-            /*
-            Message m = new Message() ;
-            m.setText( "Hello There!" ) ;
-            World world = getWorld() ;
-            world.addObject(m, mouseX, mouseY) ;
-            */
         }
 
         Actor coin;
@@ -108,8 +99,8 @@ public class GumballMachine extends Subject
         if ( coin != null )
         {
             System.out.println( coin.toString() ) ;
-            insertCoin((Coin)coin);
             removeAndAddBackCoin((Coin)coin);
+            insertCoin((Coin)coin);
         } 
     }  
     
@@ -151,8 +142,7 @@ public class GumballMachine extends Subject
     {
         Message m = new Message() ;
         m.setText( "Current Total: " + total) ;
-        World world = getWorld() ;
-        world.addObject(m, 270,420) ; 
+        m.display(270,420);
     }    
     
     private int determineCoinValue(Coin coin)
@@ -217,9 +207,13 @@ public class GumballMachine extends Subject
     
     public void resetState()
     {
-        this.setRedGumballCount(0);
-        this.setBlueGumballCount(0);
-        this.setGreenGumballCount(0);
+        this.setPennyCount(0);
+        this.setNickelCount(0);
+        this.setDimeCount(0);
+        this.setQuarterCount(0);
+        this.setTotal(0);
+        this.setPrintSmiley(false);
+        this.setHoneyTopping(false);
         this.state = noMoneyState;
     }
     

@@ -14,25 +14,32 @@ public class Picker extends Alien
      
      public void displayNoGumballsLeft(GumballMachine gumballMachine)
     {
-        Message m = new Message(370, 50) ;
+        Message m = new Message(390, 50) ;
         m.setText( "No more Gumballs! We are sorry, your money cannot be returned!" ) ;
-        World world = gumballMachine.getWorld();
-        world.addObject(m, 270,420) ;       
+        World world = gumballMachine.getWorld() ;
+        world.addObject(m, 270, 420) ;
+        
+        Greenfoot.delay(180);
+        world.removeObject(m);
+        
         gumballMachine.setState(gumballMachine.getOutOfGumballState());
     }
     
-    public void dispenseGumball(Message m, int x, int y, Gumball gumball, GumballMachine gumballmachine) {
+    public void dispenseGumball(Message m, int x, int y, Gumball gumball, GumballMachine gumballMachine) {
          
-         if(gumballmachine.isHoneyTopping())
+         if(gumballMachine.isHoneyTopping())
             gumball = new HoneyToppingDecorator(gumball);
          
-         if(gumballmachine.isPrintSmiley())
+         if(gumballMachine.isPrintSmiley())
             gumball = new SmileyDecorator(gumball);
         
-         World world = gumballmachine.getWorld() ;
+         World world = gumballMachine.getWorld() ;
          world.addObject(m, x, y) ;
          world.addObject(gumball, 298, 508) ;
          
-         gumballmachine.resetState();
+         Greenfoot.delay(100);
+         world.removeObject(m);
+         
+         gumballMachine.resetState();
     } 
 }

@@ -24,8 +24,7 @@ public class Inspector extends CoinObserver
             // We can also add a sound shouting that Coin is a Fake !
             Message m = new Message(120,50) ;
             m.setText( "The Coin is a Fake!" ) ;
-            World world = getWorld() ;
-            world.addObject(m, 540,200) ;
+            m.display(540,200);
         }    
     
     }

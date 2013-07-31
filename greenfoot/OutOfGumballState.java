@@ -18,22 +18,16 @@ public class OutOfGumballState extends State
     @Override
     public void insertCoin(Coin coin)
     {
-    
         Message m = new Message() ;
         m.setText( "Out of Gumballs !" ) ;
-        World world = this.gumballMachine.getWorld() ;
-        world.addObject(m, 270,420) ;
-    
+        m.display(270,420);
     }
     
     @Override
     public void turnCrank()
     {
-    
         Message m = new Message() ;
         m.setText( "Out of Gumballs !" ) ;
-        World world = this.gumballMachine.getWorld() ;
-        world.addObject(m, 270,420) ;
-        
+        m.display(270,420);  
     }    
 }

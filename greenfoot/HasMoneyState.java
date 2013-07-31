@@ -24,8 +24,12 @@ public class HasMoneyState extends State
     {
         Message m = new Message(350, 50) ;
         m.setText( "You have entered 50 or more Cents. Please turn the Crank!" ) ;
+        //m.display(270,420);
         World world = this.gumballMachine.getWorld() ;
-        world.addObject(m, 270,420) ;
+        world.addObject(m, 270, 420) ;
+    
+        Greenfoot.delay(180);
+        world.removeObject(m);
     }
     
     @Override

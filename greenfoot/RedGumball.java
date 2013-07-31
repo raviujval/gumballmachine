@@ -17,13 +17,14 @@ public class RedGumball extends Gumball
      */
     public void act() 
     {
-        // Add your action code here.
+        if(Greenfoot.mousePressed(this)) {  
+            GumballMachine gumballMachine = GumballMachine.getInstance();
+            gumballMachine.getWorld().removeObject(this);
+        }
     }   
     
         public void RedGumball()
     {
-       
-        description = "red gumball" ;
-        
+        description = "red gumball" ;   
     }
 }

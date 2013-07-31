@@ -33,16 +33,13 @@ public class HoneyTopping extends Actor
             GumballMachine.getInstance().setHoneyTopping(true);     
             Message m = new Message() ;
             m.setText( "Honey Topping !!" ) ;
-            World world = getWorld() ;
-            world.addObject(m, 350,420) ;
- 
+            m.display(350,420);
         }
         else {
             GumballMachine.getInstance().setHoneyTopping(false);  
             Message m = new Message() ;
             m.setText( "No Honey for you" ) ;
-            World world = getWorld() ;
-            world.addObject(m, 350,420) ;
+            m.display(350,420);
         }
         
     } 

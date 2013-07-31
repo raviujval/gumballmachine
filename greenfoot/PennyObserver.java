@@ -18,7 +18,7 @@ public class PennyObserver extends CoinObserver
     {
         if(coin instanceof Penny)
         {
-            if(super.gumballMachine.getTotal() <= 50)
+            if(super.gumballMachine.getTotal() < 50)
             {
                 coinSound = new GreenfootSound("Penny.wav");
                 coinSound.play();

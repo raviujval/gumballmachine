@@ -10,16 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public  abstract class GumballDecorator extends Gumball
 {
-    /* 
-     * 
-     protected Gumball tempgumball ;
     
-    public GumballDecorator ( Gumball G) {
-        
-        tempgumball = G;
-    }
-    
-    */
     public void changeImage (Gumball G) {
         
     }
@@ -27,16 +18,5 @@ public  abstract class GumballDecorator extends Gumball
     public void changeDesc (Gumball G) {
     
     }
-    
-    /*
-    public GumballDecorator () {
-        
-        tempgumball = new Gumball ();
-    }
-    //public String printDescription () {
-    //    return tempgumball.printDescription();
-    //}
-    
-    */
     
 }

@@ -18,7 +18,7 @@ public class NickelObserver extends CoinObserver
     {
         if(coin instanceof Nickel)
         {
-            if(super.gumballMachine.getTotal() <= 50)
+            if(super.gumballMachine.getTotal() < 50)
             {
                 coinSound = new GreenfootSound("Nickel.wav");
                 coinSound.play();

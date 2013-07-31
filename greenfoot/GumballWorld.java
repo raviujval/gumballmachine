@@ -26,7 +26,7 @@ public class GumballWorld extends World
      */
     private void prepare()
     {
-        GumballMachine gumballMachine = GumballMachine.getInstance(5,5,5);
+        GumballMachine gumballMachine = GumballMachine.getInstance(1,1,1);
         addObject(gumballMachine, 300, 280);
         addObject( new Penny(), 57, 71 ) ;
         addObject( new Nickel(), 61, 150 ) ;

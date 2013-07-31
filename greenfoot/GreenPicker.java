@@ -20,11 +20,11 @@ public class GreenPicker extends Picker
            Message m = new Message() ;
            m.setText( "I'll pick green!" ) ;
            GreenGumball gg = new  GreenGumball() ;
-           super.dispenseGumball(m,580,440,gg,gumballmachine);
+           super.dispenseGumball(m,720,315,gg,gumballmachine);
         } else {
            Message m = new Message() ;
            m.setText( "No green left!" ) ;
-           world.addObject(m, 580, 440) ; 
+           m.display(720,315);
            if (successor != null) {
                successor.getGumball() ;
             }
