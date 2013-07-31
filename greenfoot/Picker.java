@@ -14,8 +14,10 @@ public class Picker extends Alien
      
      public void displayNoGumballsLeft(GumballMachine gumballMachine)
     {
-        Message m = new Message(390, 50) ;
-        m.setText( "No more Gumballs! We are sorry, your money cannot be returned!" ) ;
+        Message m = new Message(300, 50) ;
+        GreenfootSound crankSound = new GreenfootSound("OutofGumballs.wav");
+        crankSound.play();
+        m.setText( "Sorry! The machine is out of Gumballs!" ) ;
         World world = gumballMachine.getWorld() ;
         world.addObject(m, 270, 420) ;
         

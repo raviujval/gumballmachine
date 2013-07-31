@@ -31,6 +31,8 @@ public class HoneyTopping extends Actor
         
         if ( ! GumballMachine.getInstance().isHoneyTopping()) {
             GumballMachine.getInstance().setHoneyTopping(true);     
+            GreenfootSound crankSound = new GreenfootSound("HoneyTopping.wav");
+            crankSound.play();
             Message m = new Message() ;
             m.setText( "Honey Topping !!" ) ;
             m.display(350,420);

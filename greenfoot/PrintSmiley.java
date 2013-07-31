@@ -30,6 +30,8 @@ public class PrintSmiley extends Actor
                 
         if (! GumballMachine.getInstance().isPrintSmiley()) {
             GumballMachine.getInstance().setPrintSmiley(true);    
+            GreenfootSound crankSound = new GreenfootSound("Smiley Gumball.wav");
+            crankSound.play();
             Message m = new Message() ;
             m.setText( "Smiley Gumball !!" ) ;
             m.display(270,420);

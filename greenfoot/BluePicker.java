@@ -18,11 +18,16 @@ public class BluePicker extends Picker
        //Message is displayed
        if (gumballmachine.getBlueGumballCount()>0) {
             gumballmachine.setBlueGumballCount(gumballmachine.getBlueGumballCount() - 1);
+            GreenfootSound crankSound = new GreenfootSound("PickBlue.wav");
+            crankSound.play();
             Message m = new Message() ;
             m.setText( "I'll pick blue!" ) ;
             BlueGumball bg = new  BlueGumball() ;
             super.dispenseGumball(m,462,45,bg,gumballmachine);
         } else {
+           GreenfootSound crankSound = new GreenfootSound("Noblue.wav");
+           crankSound.play(); 
+           Greenfoot.delay(120);
            Message m = new Message() ;
            m.setText( "No blue left!" ) ;
            m.display(462,45);

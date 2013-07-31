@@ -17,16 +17,22 @@ public class RandomPicker extends Picker
        
        if (gumballmachine.getGreenGumballCount()>0) {
            gumballmachine.setGreenGumballCount(gumballmachine.getGreenGumballCount() - 1);
+           GreenfootSound crankSound = new GreenfootSound("PickGreen.wav");
+            crankSound.play();
            m.setText( "I'll pick green!" ) ;
            GreenGumball gg = new  GreenGumball() ;
            super.dispenseGumball(m,550,420,gg,gumballmachine) ;
         } else if (gumballmachine.getRedGumballCount()>0) {
            gumballmachine.setRedGumballCount(gumballmachine.getRedGumballCount() - 1);
+           GreenfootSound crankSound = new GreenfootSound("PickRed.wav");
+            crankSound.play();
            m.setText( "I'll pick red!" ) ;
            RedGumball rg = new  RedGumball() ;
            super.dispenseGumball(m,550,420,rg,gumballmachine) ;
         } else if (gumballmachine.getBlueGumballCount()>0) {
            gumballmachine.setBlueGumballCount(gumballmachine.getBlueGumballCount() - 1); 
+           GreenfootSound crankSound = new GreenfootSound("PickBlue.wav");
+            crankSound.play();
            m.setText( "I'll pick blue!" ) ;
            BlueGumball rg = new  BlueGumball() ;
            super.dispenseGumball(m,550,420,rg,gumballmachine) ;

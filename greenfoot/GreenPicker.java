@@ -17,11 +17,16 @@ public class GreenPicker extends Picker
        
        if (gumballmachine.getGreenGumballCount()>0) {
            gumballmachine.setGreenGumballCount(gumballmachine.getGreenGumballCount() - 1);
+           GreenfootSound crankSound = new GreenfootSound("PickGreen.wav");
+           crankSound.play();
            Message m = new Message() ;
            m.setText( "I'll pick green!" ) ;
            GreenGumball gg = new  GreenGumball() ;
            super.dispenseGumball(m,720,315,gg,gumballmachine);
         } else {
+           GreenfootSound crankSound = new GreenfootSound("NoGreen.wav");
+           crankSound.play(); 
+           Greenfoot.delay(120);
            Message m = new Message() ;
            m.setText( "No green left!" ) ;
            m.display(720,315);

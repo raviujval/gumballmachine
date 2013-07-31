@@ -91,6 +91,7 @@ public class GumballMachine extends Subject
                 System.out.println("Turn Crank is getting called !");
                 GreenfootSound crankSound = new GreenfootSound("Crank.mp3");
                 crankSound.play();
+                Greenfoot.delay(70);
                 turnCrank();
             }
         }

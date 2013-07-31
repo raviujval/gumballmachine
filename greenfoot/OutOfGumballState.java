@@ -19,6 +19,8 @@ public class OutOfGumballState extends State
     public void insertCoin(Coin coin)
     {
         Message m = new Message() ;
+        GreenfootSound crankSound = new GreenfootSound("OutofGumballs.wav");
+        crankSound.play();
         m.setText( "Out of Gumballs !" ) ;
         m.display(270,420);
     }
@@ -26,6 +28,8 @@ public class OutOfGumballState extends State
     @Override
     public void turnCrank()
     {
+        GreenfootSound crankSound = new GreenfootSound("OutofGumballs.wav");
+        crankSound.play();
         Message m = new Message() ;
         m.setText( "Out of Gumballs !" ) ;
         m.display(270,420);  
