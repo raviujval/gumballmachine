@@ -125,8 +125,8 @@ public class CombinationStrategy extends GumballPickerStrategy
         {
            //strategy implemented here
             pickers.add(new BluePicker());
-            pickers.add(new GreenPicker());        
             pickers.add(new RedPicker());
+            pickers.add(new GreenPicker());        
             pickers.add(new RandomPicker());
         }
         else if(nickelInserted)

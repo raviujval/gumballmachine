@@ -17,29 +17,26 @@ public class CountStrategy extends GumballPickerStrategy
         
         if(quarterCount > 0)
         {   
-            pickers.add(new RandomPicker());
-            pickers.add(new BluePicker());
             pickers.add(new RedPicker());
+            pickers.add(new BluePicker());
             pickers.add(new GreenPicker());
-
+            pickers.add(new RandomPicker());           
         } 
         
         else if(pennyCount > 0)
         {
-            pickers.add(new BluePicker());
-            pickers.add(new RedPicker());
-            pickers.add(new GreenPicker());
             pickers.add(new RandomPicker());
-
+            pickers.add(new GreenPicker());
+            pickers.add(new RedPicker());
+            pickers.add(new BluePicker());            
         }
             
         else if(nickelCount > 0)  
         {    
+            pickers.add(new BluePicker());
             pickers.add(new RedPicker());
             pickers.add(new GreenPicker());
             pickers.add(new RandomPicker());
-            pickers.add(new BluePicker());
-
         }
         
         else if(dimeCount > 0) 
@@ -48,7 +45,6 @@ public class CountStrategy extends GumballPickerStrategy
             pickers.add(new RandomPicker());
             pickers.add(new BluePicker());
             pickers.add(new RedPicker());
-
         }    
         
         return pickers;
